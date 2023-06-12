@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "alert": "^5.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "html": "^1.0.0",
+    "localStorage": "^1.0.4",
+    "mysql": "^2.18.1",
+    "node-localStorage": "^0.0.1",
+    "nodemon": "^2.0.22",
+    "window": "^4.2.7"
+  }
+}
