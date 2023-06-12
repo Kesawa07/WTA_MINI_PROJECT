@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#info" style="text-decoration: none;">Info</a></li>
+            <li><a href="#ins_up_marks" style="text-decoration: none;">Insert/Update IA&Activity Marks</a></li>
+            <!-- <li><a href="#act_marks" style="text-decoration: none;">Activity Marks</a></li> -->
+            <li><a href="/" style="text-decoration: none;">Log Out</a></li>
+        </ul>
+    </nav>
+    <section id="info">
+        <p><%= tid %></p>
+        <p><%= tname %></p>
+        <p><%= tqua %></p>
+        <p><%= ct %></p>
+    </section>
+    <div style="background-color: black; height: 5px; width: auto; margin-bottom: 6px;"></div>
+    <section id="ins_up_marks">
+        <form action="/success" method="POST">
+            <input type="text" name="USN" id="usn" placeholder="Enter Your USN">
+            <input type="text" name="SUB_CODE" id="sub_code" placeholder="Enter Your Subject Code">
+            <input type="text" name="IA1" id="ia1" size="40" placeholder="IA1 Marks(Enter 0 if not given or not conducted)">
+            <input type="text" name="IA2" id="ia2" size="40" placeholder="IA2 Marks(Enetr 0 if not given or not conducted)">
+            <input type="text" name="IA3" id="ia3" size="40" placeholder="IA3 Marks(Enetr 0 if not given or not conducted)">
+            <input type="text" name="ACT" id="act" size="45" placeholder="Activity Marks(Enter 0 if not given or not conducted)">
+            <input class="file_submit" type="Submit">
+        </form>
+    </section>
+    <!-- <section id="act_marks">
+        <form action="/success" method="POST">
+            <input type="text" name="USN" id="usn" placeholder="Enter Your USN">
+            <input type="text" name="SUB_CODE" id="sub_code" placeholder="Enter Your Subject Code">
+            <input type="text" name="ACT" id="act" size="40" placeholder="Activity Marks(Enter 0 if not given or not conducted)">
+            <input class="file_submit" type="Submit">
+        </form>
+    </section> -->
+</body>
+</html>

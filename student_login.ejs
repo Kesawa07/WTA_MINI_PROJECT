@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none;"><button>Teacher</button></a>
+    <a href="/student_login" style="text-decoration: none;"><button>Student</button></a>
+    <form action="/student_home" method="POST">
+        <input type="text" name="cname" id="cname" placeholder="Enter Your Name">
+        <input type="text" name="sem" id="sem" placeholder="Enter SEM">
+        <input type="password" name="capcha" id="capcha" placeholder="Enter Captcha">
+        <input class="file_submit" type="Submit">
+    </form>
+</body>
+</html>
