@@ -10,9 +10,10 @@
     <a href="/" style="text-decoration: none;"><button>Teacher</button></a>
     <a href="/student_login" style="text-decoration: none;"><button>Student</button></a>
     <form action="/student_home" method="POST">
-        <input type="text" name="cname" id="cname" placeholder="Enter Your Name">
-        <input type="text" name="sem" id="sem" placeholder="Enter SEM">
-        <input type="password" name="capcha" id="capcha" placeholder="Enter Captcha">
+        <input type="text" name="usn" id="usn" placeholder="Enter Your USN">
+        <input type="text" name="sem" id="sem" size="25" placeholder="Enter SEM(Ex: 1,2,3,4,5,6,7,8)">
+        <p><%= capcha %></p>
+        <input type="text" name="capcha" id="capcha" placeholder="Enter Captcha">
         <input class="file_submit" type="Submit">
     </form>
 </body>
