@@ -7,7 +7,31 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome Student to home page</h1>
+    <p><%= name%></p>
+    <p><%= usn%></p>
+    <p><%= sem%></p>
+    <table>
+        <th>SUBJECT CODE</th>
+        <th>IA1 MARKS</th>
+        <th>IA2 MARKS</th>
+        <th>IA3 MARKS</th>
+        <th>ACTIVITY MARKS</th>
+        <th>AVERAGE MARKS</th>
+        <th>GRADE</th>
+        <%
+        for(var i=0;i<items.length;i++){
+        %>
+        <tr>
+            <td><%= items[i].sub_code%></td>
+            <td><%= items[i].ia1_marks%></td>
+            <td><%= items[i].ia2_marks%></td>
+            <td><%= items[i].is3_marks%></td>
+            <td><%= items[i].act_marks%></td>
+            <td><%= items[i].avg%></td>
+            <td><%= items[i].grade%></td>
+        </tr> 
+        <%}%>
+    </table>
     <a href="/student_login" style="text-decoration: none;">Log Out</a>
 </body>
 </html>
