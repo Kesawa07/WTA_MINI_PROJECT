@@ -1,45 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="icon" type="image/png" href="../static/logo1.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+        body {
+            font-family: 'Philosopher', sans-serif;
+            background-color: #e7fcff;
+            margin: 0;
+            padding: 0;
+        }
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+        }
+
+        #nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #nav ul li a {
+            display: block;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        } 
+
+        a {
+            display: block;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            margin-left: 60px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        #nav ul li a:hover {
+            background-color: #4CAF50;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        #info p {
+            margin: 10px 0;
+        }
+
+        #category {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 16%;
+            padding-left: 38%;
+            background-color: antiquewhite;
+        }
+
+        #info {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 5%;
+            padding-left: 21%;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10rem;
+        }
+        
+        #ins_up_marks {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 5%;
+            padding-left: 21%;
+            background-color: antiquewhites;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10rem;
+        }
+
+        div {
+            background-color: black;
+            height: 5px;
+            width: auto;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"] {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .file_submit {
+            display: block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .file_submit:hover {
+            background-color: #45a049;
+        }
+
+        img{
+            height: 10rem;
+            width: 10rem;
+        }
+    </style>
 </head>
+
 <body>
-    <nav>
+    <nav id="nav">
         <ul>
-            <li><a href="#info" style="text-decoration: none;">Info</a></li>
-            <li><a href="#ins_up_marks" style="text-decoration: none;">Insert/Update IA&Activity Marks</a></li>
-            <!-- <li><a href="#act_marks" style="text-decoration: none;">Activity Marks</a></li> -->
-            <li><a href="/" style="text-decoration: none;">Log Out</a></li>
+            <li><a href="#info">My Info</a></li>
+            <li><a href="#ins_up_marks">Insert/Update IA&Activity Marks</a></li>
+            <li><a href="/">Log Out</a></li>
         </ul>
     </nav>
+    <div id="category">
+        <button><a href="#info">My Info</a></button>
+        <button><a href="#ins_up_marks">Insert/Update IA&Activity Marks</a></button>
+        <button><a href="/">Log Out</a></button>
+    </div>
+    <div></div>
     <section id="info">
-        <p><%= tid %></p>
-        <p><%= tname %></p>
-        <p><%= tqua %></p>
-        <p><%= ct %></p>
+        <img src="../static/info.png" alt="">
+        <p>Teacher ID: <%= tid %>
+        </p>
+        <p>Teacher Name: <%= tname %>
+        </p>
+        <p>Teacher Qualification: <%= tqua %>
+        </p>
+        <p>Class Teacher: <%= ct %>
+        </p>
     </section>
-    <div style="background-color: black; height: 5px; width: auto; margin-bottom: 6px;"></div>
+    <div></div>
     <section id="ins_up_marks">
+        <img src="../static/insert_update.png" alt="">
+        <p>!!!Inser/Update Marks Here!!!</p>
         <form action="/success" method="POST">
             <input type="text" name="USN" id="usn" placeholder="Enter Your USN">
             <input type="text" name="SUB_CODE" id="sub_code" placeholder="Enter Your Subject Code">
-            <input type="text" name="IA1" id="ia1" size="40" placeholder="IA1 Marks(Enter 0 if not given or not conducted)">
-            <input type="text" name="IA2" id="ia2" size="40" placeholder="IA2 Marks(Enetr 0 if not given or not conducted)">
-            <input type="text" name="IA3" id="ia3" size="40" placeholder="IA3 Marks(Enetr 0 if not given or not conducted)">
-            <input type="text" name="ACT" id="act" size="45" placeholder="Activity Marks(Enter 0 if not given or not conducted)">
+            <input type="text" name="IA1" id="ia1" size="40"
+                placeholder="IA1 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="IA2" id="ia2" size="40"
+                placeholder="IA2 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="IA3" id="ia3" size="40"
+                placeholder="IA3 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="ACT" id="act" size="45"
+                placeholder="Activity Marks (Enter 0 if not given or not conducted)">
             <input class="file_submit" type="Submit">
         </form>
     </section>
-    <!-- <section id="act_marks">
-        <form action="/success" method="POST">
-            <input type="text" name="USN" id="usn" placeholder="Enter Your USN">
-            <input type="text" name="SUB_CODE" id="sub_code" placeholder="Enter Your Subject Code">
-            <input type="text" name="ACT" id="act" size="40" placeholder="Activity Marks(Enter 0 if not given or not conducted)">
-            <input class="file_submit" type="Submit">
-        </form>
-    </section> -->
 </body>
+
 </html>
