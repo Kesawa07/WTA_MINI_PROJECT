@@ -1,37 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="../static/logo1.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Philosopher&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+        body {
+            font-family: 'Arvo', serif;
+            background-color: #e7fcff;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 10px 0;
+    margin-left: 10px;
+    font-size: 22px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        table tr:nth-child(odd){
+            background-color: #9d9d9d;
+        }
+
+        table th{
+            background-color: black;
+            color: white;
+        }
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            margin-left: 46%;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <p><%= name%></p>
-    <p><%= usn%></p>
-    <p><%= sem%></p>
+    <p>NAME: <%= name %></p>
+    <p>USN: <%= usn %></p>
+    <p>SEM: <%= sem %></p>
     <table>
-        <th>SUBJECT CODE</th>
-        <th>IA1 MARKS</th>
-        <th>IA2 MARKS</th>
-        <th>IA3 MARKS</th>
-        <th>ACTIVITY MARKS</th>
-        <th>AVERAGE MARKS</th>
-        <th>GRADE</th>
-        <%
-        for(var i=0;i<items.length;i++){
-        %>
         <tr>
-            <td><%= items[i].sub_code%></td>
-            <td><%= items[i].ia1_marks%></td>
-            <td><%= items[i].ia2_marks%></td>
-            <td><%= items[i].is3_marks%></td>
-            <td><%= items[i].act_marks%></td>
-            <td><%= items[i].avg%></td>
-            <td><%= items[i].grade%></td>
-        </tr> 
-        <%}%>
+            <th>SUBJECT CODE</th>
+            <th>IA1 MARKS</th>
+            <th>IA2 MARKS</th>
+            <th>IA3 MARKS</th>
+            <th>ACTIVITY MARKS</th>
+            <th>AVERAGE MARKS</th>
+            <th>GRADE</th>
+        </tr>
+        <% for(var i = 0; i < items.length; i++){ %>
+        <tr>
+            <td><%= items[i].sub_code %></td>
+            <td><%= items[i].ia1_marks %></td>
+            <td><%= items[i].ia2_marks %></td>
+            <td><%= items[i].ia3_marks %></td>
+            <td><%= items[i].act_marks %></td>
+            <td><%= items[i].avg %></td>
+            <td><%= items[i].grade %></td>
+        </tr>
+        <% } %>
     </table>
-    <a href="/student_login" style="text-decoration: none;">Log Out</a>
+    <a href="/student_login">Log Out</a>
 </body>
 </html>
