@@ -127,7 +127,6 @@ app.post("/student_home", (req, res) => {
   if (global.capcha == scapcha) {
     con.query(sqlcmd, [susn,susn,ssem], (err, result,fields) => {
       if (err) throw err;
-      console.log(result);
       res.render('student_home',{usn:susn,sem:ssem,name:result[0].name,items:result});
     });
   }
