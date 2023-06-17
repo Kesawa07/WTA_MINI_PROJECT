@@ -1,18 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="../static/logo1.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7fcff;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            display: flexbox;
+            margin: 20px auto;
+            margin-left: 60px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 16px;
+        }
+
+        input[type="Submit"] {
+            display: block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 2rem;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        div{
+            padding-left: 35.7rem;
+            margin-top: 8rem;
+        }
+    </style>
 </head>
 <body>
-    <a href="/" style="text-decoration: none;"><button>Teacher</button></a>
-    <a href="/student_login" style="text-decoration: none;"><button>Student</button></a>
+    <div>
+        <a href="/"><button id="teacher">Teacher</button></a>
+        <a href="/student_login"><button id="student">Student</button></a>
+    </div>
     <form action="/teacher_home" method="POST">
-        <input type="text" name="cname" id="cname" placeholder="Enter Your Name">
-        <input type="password" name="cpswd" id="cpswd" placeholder="Enter Your Password">
-        <input class="file_submit" type="Submit">
+        <input type="text" name="cname" id="cname" size="25" placeholder="Enter Your Name">
+        <input type="password" name="cpswd" id="cpswd" size="25" placeholder="Enter Your Password">
+        <input class="file_submit" type="submit">
     </form>
 </body>
 </html>
