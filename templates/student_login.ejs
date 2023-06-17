@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="../static/logo1.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Home</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Philosopher', sans-serif;
             background-color: #e7fcff;
             margin: 0;
             padding: 0;
         }
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+        }
+
+        #nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #nav ul li a {
+            display: block;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        } 
 
         a {
+            display: block;
+            color: white;
+            padding: 10px 15px;
             text-decoration: none;
         }
 
         button {
-            display: flexbox;
+            display: block;
             margin: 20px auto;
             margin-left: 60px;
             padding: 10px 20px;
@@ -35,21 +60,55 @@
             font-family: 'Bagel Fat One', cursive;
         }
 
-        button:hover {
-            background-color: #45a049;
+        #nav ul li a:hover {
+            background-color: #4CAF50;
         }
 
-        form {
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        section {
+            margin-bottom: 20px;
         }
 
-        input[type="text"],
-        input[type="password"] {
+        #info p {
+            margin: 10px 0;
+        }
+
+        #category {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 16%;
+            padding-left: 38%;
+            background-color: antiquewhite;
+        }
+
+        #info {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 5%;
+            padding-left: 21%;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10rem;
+        }
+        
+        #ins_up_marks {
+            width: 58.8rem;
+            height: 30rem;
+            padding-top: 5%;
+            padding-left: 21%;
+            background-color: antiquewhites;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10rem;
+        }
+
+        div {
+            background-color: black;
+            height: 5px;
+            width: auto;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"] {
             display: block;
             margin-bottom: 10px;
             padding: 8px;
@@ -58,7 +117,6 @@
             border-radius: 4px;
             width: 100%;
             box-sizing: border-box;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
 
         .file_submit {
@@ -73,30 +131,62 @@
             font-size: 16px;
             border-radius: 4px;
             width: 100%;
-            font-family: 'Bagel Fat One', cursive;
         }
 
         .file_submit:hover {
             background-color: #45a049;
         }
 
-        div{
-            padding-left: 35.7rem;
-            margin-top: 8rem;
+        img{
+            height: 10rem;
+            width: 10rem;
         }
     </style>
 </head>
+
 <body>
-    <div>
-        <a href="/"><button id="teacher">Teacher</button></a>
-        <a href="/student_login"><button id="student">Student</button></a>
+    <nav id="nav">
+        <ul>
+            <li><a href="#info">My Info</a></li>
+            <li><a href="#ins_up_marks">Insert/Update IA&Activity Marks</a></li>
+            <li><a href="/">Log Out</a></li>
+        </ul>
+    </nav>
+    <div id="category">
+        <button><a href="#info">My Info</a></button>
+        <button><a href="#ins_up_marks">Insert/Update IA&Activity Marks</a></button>
+        <button><a href="/">Log Out</a></button>
     </div>
-    <form action="/student_home" method="POST">
-        <input type="text" name="usn" id="usn" placeholder="Enter Your USN">
-        <input type="text" name="sem" id="sem" size="25" placeholder="Enter SEM (Ex: 1, 2, 3, 4, 5, 6, 7, 8)">
-        <p><%= capcha %></p>
-        <input type="text" name="capcha" id="capcha" placeholder="Enter Captcha">
-        <input class="file_submit" type="Submit">
-    </form>
+    <div></div>
+    <section id="info">
+        <img src="../static/info.png" alt="">
+        <p>Teacher ID: <%= tid %>
+        </p>
+        <p>Teacher Name: <%= tname %>
+        </p>
+        <p>Teacher Qualification: <%= tqua %>
+        </p>
+        <p>Class Teacher: <%= ct %>
+        </p>
+    </section>
+    <div></div>
+    <section id="ins_up_marks">
+        <img src="../static/insert_update.png" alt="">
+        <p>!!!Inser/Update Marks Here!!!</p>
+        <form action="/success" method="POST">
+            <input type="text" name="USN" id="usn" placeholder="Enter Your USN">
+            <input type="text" name="SUB_CODE" id="sub_code" placeholder="Enter Your Subject Code">
+            <input type="text" name="IA1" id="ia1" size="40"
+                placeholder="IA1 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="IA2" id="ia2" size="40"
+                placeholder="IA2 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="IA3" id="ia3" size="40"
+                placeholder="IA3 Marks (Enter 0 if not given or not conducted)">
+            <input type="text" name="ACT" id="act" size="45"
+                placeholder="Activity Marks (Enter 0 if not given or not conducted)">
+            <input class="file_submit" type="Submit">
+        </form>
+    </section>
 </body>
+
 </html>
