@@ -1,17 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="../static/logo1.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7fcff;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            display: flexbox;
+            margin: 20px auto;
+            margin-left: 60px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .file_submit {
+            display: block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 100%;
+            font-family: 'Bagel Fat One', cursive;
+        }
+
+        .file_submit:hover {
+            background-color: #45a049;
+        }
+
+        div{
+            padding-left: 35.7rem;
+            margin-top: 8rem;
+        }
+    </style>
 </head>
 <body>
-    <a href="/" style="text-decoration: none;"><button>Teacher</button></a>
-    <a href="/student_login" style="text-decoration: none;"><button>Student</button></a>
+    <div>
+        <a href="/"><button id="teacher">Teacher</button></a>
+        <a href="/student_login"><button id="student">Student</button></a>
+    </div>
     <form action="/student_home" method="POST">
         <input type="text" name="usn" id="usn" placeholder="Enter Your USN">
-        <input type="text" name="sem" id="sem" size="25" placeholder="Enter SEM(Ex: 1,2,3,4,5,6,7,8)">
+        <input type="text" name="sem" id="sem" size="25" placeholder="Enter SEM (Ex: 1, 2, 3, 4, 5, 6, 7, 8)">
         <p><%= capcha %></p>
         <input type="text" name="capcha" id="capcha" placeholder="Enter Captcha">
         <input class="file_submit" type="Submit">
